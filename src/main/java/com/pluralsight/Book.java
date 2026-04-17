@@ -56,4 +56,15 @@ public class Book {
     public void setCheckedOut(boolean checkedOut) {
         isCheckedOut = checkedOut;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", checkedOutTo='" + checkedOutTo + '\'' +
+                ", isCheckedOut=" + isCheckedOut +
+                '}';
+    }
 }
