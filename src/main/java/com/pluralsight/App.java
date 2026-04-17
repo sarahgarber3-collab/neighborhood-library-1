@@ -32,33 +32,41 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the library management tool");
-        System.out.println("\t1) Show Available books");
-        System.out.println("\t2) Show Checked out books");
-        System.out.println("\t0) Exit");
-        System.out.print("Please choose an option: ");
-        int option = scanner.nextInt();
+        boolean run = true;
+        while (run) {
+            System.out.println("\t1) Show Available books");
+            System.out.println("\t2) Show Checked out books");
+            System.out.println("\t0) Exit");
+            System.out.print("Please choose an option: ");
+            int option = scanner.nextInt();
 
-        switch (option) {
-            case 1 -> showAvailableBooks(books);
-            case 2 -> {showCheckedOutBooks(books);
+            switch (option) {
+                case 1 -> showAvailableBooks(books);
+                case 2 -> showCheckedOutBooks(books);
+                case 0 -> {
+                    System.out.println("Goodbye");
+                    run = false;
+
+                }
+
+
             }
-            case 0 -> {
-                System.out.println("Goodbye");
-
-            }
-
-
         }
     }
-}
+
     public static void showAvailableBooks(Book[] books) {
-    for (int i = 0; i < books.length;i++){
-        if (!books[i].isCheckedOut() {
-            System.out.println(books[i]);
+        for (int i = 0; i < books.length; i++) {
+            if (!books[i].isCheckedOut()) {
+                System.out.println(books[i]);
+            }
+        }
+    }
+
+    public static void showCheckedOutBooks(Book[] books) {
+        for (int i = 0; i < books.length; i++) {
+            if (books[i].isCheckedOut()) {
+                System.out.println(books[i]);
+            }
         }
     }
 }
-public static void showCheckedOutBooks(Book[] books) {
-    for (int i = 0; i < books.length;i++){
-        if (books[i].isCheckedOut() {
-            System.out.println(books[i]);
